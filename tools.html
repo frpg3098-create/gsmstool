@@ -1,1 +1,110 @@
-404: Not Found
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSM FRP - Forensic Tools & Screen Unlock Suite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #060913; --card-bg: rgba(15, 23, 42, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-gold: #f59e0b; --text-main: #f8fafc; --text-dim: #94a3b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: var(--bg); color: var(--text-main); }
+        
+        header {
+            position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center;
+            padding: 18px 6%; background: rgba(6, 9, 19, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid var(--card-border);
+        }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-box { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #d97706, var(--accent-gold)); display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; }
+        .logo-title { font-size: 22px; font-weight: 800; color: #fff; }
+        nav a { color: var(--text-dim); text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 14px; }
+        nav a.active { color: var(--accent-gold); }
+
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; padding: 50px 6%; }
+        .tool-card {
+            background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 24px; padding: 32px;
+            display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s;
+        }
+        .tool-card:hover { transform: translateY(-8px); border-color: var(--accent-gold); box-shadow: 0 15px 35px rgba(245, 158, 11, 0.15); }
+        .tag-pwd { display: inline-block; padding: 6px 14px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2); font-size: 13px; margin: 15px 0; }
+        .tag-pwd strong { color: var(--accent-gold); }
+        .btn-dl { background: #10b981; color: #fff; text-decoration: none; padding: 14px; border-radius: 12px; font-weight: 700; text-align: center; display: block; transition: 0.3s; }
+        .btn-dl:hover { background: #059669; box-shadow: 0 0 20px rgba(16,185,129,0.4); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <div class="logo-title">GSM FRP</div>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Unlock Services</a>
+            <a href="tools.html" class="active">Free Forensic Tools</a>
+            <a href="track.html">Track Order</a>
+        </nav>
+    </header>
+
+    <div style="text-align: center; padding: 50px 6% 0;">
+        <h1 style="font-size: 38px; font-weight: 800;">Digital Forensic & Bypass Suite</h1>
+        <p style="color: var(--text-dim); margin-top: 10px;">Physical Dump, Data Carving & Screen Lock Acquisition Without Factory Reset</p>
+    </div>
+
+    <div class="tools-grid">
+        <!-- Oxygen Forensic -->
+        <div class="tool-card">
+            <div>
+                <i class="fa-solid fa-dna" style="font-size: 36px; color: #ef4444; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 22px;">Oxygen Forensic Detective 18.3.0.80</h3>
+                <p style="color: var(--text-dim); font-size: 14px; margin-top: 10px;">Latest release with automatic installation and complete license activation. Includes full video walkthrough.</p>
+                <div class="tag-pwd">Status: <strong>Pre-Activated (Automatic Setup)</strong></div>
+            </div>
+            <a href="https://t.me/arbad9000" target="_blank" class="btn-dl"><i class="fa-solid fa-download"></i> Direct Download Link</a>
+        </div>
+
+        <!-- UFED -->
+        <div class="tool-card">
+            <div>
+                <i class="fa-solid fa-mobile-screen" style="font-size: 36px; color: #3b82f6; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 22px;">Cellebrite UFED 7.71 (Setup + Fix)</h3>
+                <p style="color: var(--text-dim); font-size: 14px; margin-top: 10px;">Full extraction setup including Search Fix utility. Extract locks and partitions safely without loss of data.</p>
+                <div class="tag-pwd">Password: <strong>@gaddtech</strong></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <a href="https://www.mediafire.com/folder/y28kdkqp8xnyi/UFED7.71" target="_blank" class="btn-dl"><i class="fa-solid fa-folder"></i> Mediafire Setup</a>
+                <a href="https://drive.google.com/drive/folders/1HOpn4Qmsqc6TNN0s51pvO6Sqrg3eO4Ws?usp=drive_link" target="_blank" class="btn-dl" style="background: #2563eb;"><i class="fa-brands fa-google-drive"></i> Google Drive Fix</a>
+            </div>
+        </div>
+
+        <!-- MD-NEXT -->
+        <div class="tool-card">
+            <div>
+                <i class="fa-solid fa-hard-drive" style="font-size: 36px; color: #10b981; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 22px;">MD-NEXT 2.0.3 + MD-Plug</h3>
+                <p style="color: var(--text-dim); font-size: 14px; margin-top: 10px;">Mobile forensics tool for Asian & global chipsets (MTK, Qualcomm, Spreadtrum). Free activation included.</p>
+                <div class="tag-pwd">Password: <strong>@gaddtech</strong></div>
+            </div>
+            <a href="https://www.mediafire.com/folder/5xlcveadthv5y/MD-NEXT_2.0.3" target="_blank" class="btn-dl"><i class="fa-solid fa-download"></i> Download MD-NEXT 2.0.3</a>
+        </div>
+
+        <!-- 7.80 Suite -->
+        <div class="tool-card">
+            <div>
+                <i class="fa-solid fa-network-wired" style="font-size: 36px; color: #a855f7; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 22px;">Forensic Package 7.80 Suite</h3>
+                <p style="color: var(--text-dim); font-size: 14px; margin-top: 10px;">Fifth analytics bundle for decoding encrypted partitions, physical dumps, and bypassing screen passcodes.</p>
+                <div class="tag-pwd">Password: <strong>@arbad9000</strong></div>
+            </div>
+            <a href="https://t.me/arbad9000/55" target="_blank" class="btn-dl"><i class="fa-brands fa-telegram"></i> Download via Telegram</a>
+        </div>
+    </div>
+
+</body>
+</html>
