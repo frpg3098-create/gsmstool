@@ -1,1 +1,513 @@
-404: Not Found
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSM FRP - Premium Forensic & Device Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #060913;
+            --card-bg: rgba(15, 23, 42, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-blue: #00d2ff;
+            --accent-gold: #f59e0b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+
+        /* VIP Header & Animated Logo */
+        header {
+            position: sticky; top: 0; z-index: 100;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 18px 6%; background: rgba(6, 9, 19, 0.85); backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--card-border);
+        }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-box {
+            width: 46px; height: 46px; border-radius: 14px;
+            background: linear-gradient(135deg, #1d4ed8, var(--accent-blue));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; color: #fff; box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
+            animation: pulse-vip 2.5s infinite alternate;
+        }
+        .logo-title {
+            font-size: 24px; font-weight: 800; letter-spacing: 1.5px;
+            background: linear-gradient(90deg, #fff, var(--accent-blue), #fff);
+            background-size: 200% auto; -webkit-background-clip: text; color: transparent;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+        @keyframes pulse-vip { 0% { transform: scale(1); } 100% { transform: scale(1.06); box-shadow: 0 0 35px var(--accent-blue); } }
+        
+        nav { display: flex; gap: 24px; }
+        nav a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--accent-blue); text-shadow: 0 0 10px rgba(0,210,255,0.4); }
+
+        /* Hero & Search */
+        .hero { text-align: center; padding: 80px 6% 40px; background: radial-gradient(circle at 50% 10%, rgba(0,210,255,0.1), transparent 60%); }
+        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 15px; }
+        .hero p { color: var(--text-dim); font-size: 17px; max-width: 600px; margin: 0 auto 35px; }
+        
+        .search-wrapper { max-width: 620px; margin: 0 auto; position: relative; }
+        .search-box {
+            width: 100%; padding: 18px 24px 18px 55px; border-radius: 50px;
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            color: #fff; font-size: 16px; outline: none; transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .search-box:focus { border-color: var(--accent-blue); box-shadow: 0 0 25px rgba(0,210,255,0.3); }
+        .search-icon { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: var(--text-dim); }
+
+        /* VIP Portals Grid */
+        .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 40px 6%; }
+        .portal-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 24px; padding: 35px 28px; text-decoration: none; color: inherit;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .portal-card:hover { transform: translateY(-8px); border-color: var(--accent-blue); box-shadow: 0 20px 40px rgba(0, 210, 255, 0.15); }
+        .portal-icon { font-size: 38px; margin-bottom: 20px; color: var(--accent-blue); }
+        .portal-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+        .portal-card p { font-size: 14px; color: var(--text-dim); margin-bottom: 25px; }
+        .portal-btn { font-size: 14px; font-weight: 700; color: var(--accent-blue); display: flex; align-items: center; gap: 8px; }
+
+        /* Counter Section */
+        .counter-section { text-align: center; padding: 70px 6%; background: rgba(15, 23, 42, 0.4); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
+        .counter-number { font-size: 68px; font-weight: 900; color: var(--accent-blue); text-shadow: 0 0 30px rgba(0, 210, 255, 0.4); }
+        .counter-label { font-size: 16px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; }
+
+        /* IMEI 3-Step Verification Guide */
+        .guide-section { padding: 70px 6%; }
+        .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 35px; }
+        .guide-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 25px; text-align: center; }
+        .step-tag { display: inline-block; padding: 4px 14px; background: rgba(0,210,255,0.1); color: var(--accent-blue); border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 12px; }
+
+        /* Testimonials */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 0 6% 60px; }
+        .review-box { background: var(--card-bg); border: 1px solid var(--card-border); padding: 22px; border-radius: 16px; }
+
+        /* ================= CSS STYLES FOR THE OVERVIEW CARDS ================= */
+        .overview-section {
+            padding: 80px 6%;
+            background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.6), rgba(6, 9, 19, 0.95));
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .overview-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .sub-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            background: rgba(0, 210, 255, 0.1);
+            color: #00d2ff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+        }
+
+        .overview-header h2 {
+            font-size: 34px;
+            font-weight: 800;
+            color: #f8fafc;
+            margin-bottom: 12px;
+        }
+
+        .overview-header p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .overview-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 22px;
+            padding: 32px 28px;
+            position: relative;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(var(--accent), 0.2);
+        }
+
+        .icon-bubble {
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent);
+            transition: 0.3s;
+        }
+
+        .icon-bubble svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .overview-card:hover .icon-bubble {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 0 20px var(--accent);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .overview-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 12px;
+        }
+
+        .overview-card p {
+            font-size: 13.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+        }
+
+        .features-list span {
+            font-size: 12.5px;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features-list span i {
+            color: var(--accent);
+            font-size: 11px;
+        }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--card-border); color: var(--text-dim); font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-box"><i class="fa-solid fa-microchip"></i></div>
+            <div class="logo-title">GSM FRP</div>
+        </a>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Unlock Services</a>
+            <a href="tools.html">Free Forensic Tools</a>
+            <a href="track.html">Track Order</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>High-Grade Forensic & Unlock Hub</h1>
+        <p>Direct official server APIs, mobile screen lock removals without data loss, and real-time validation.</p>
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="liveSearch" class="search-box" placeholder="Quick search any service or tool (e.g. iPhone 15, Oxygen, MD-NEXT)..." onkeyup="searchRedirect(event)">
+        </div>
+    </section>
+
+    <!-- Main Navigation Portals -->
+    <section class="portal-grid">
+        <a href= target="_blank" class="portal-card" style="border-color: rgba(56, 189, 248, 0.3);">
+            <div>
+                <div class="portal-icon" style="color: #38bdf8;"><i class="fa-solid fa-satellite-dish"></i></div>
+                <h3>Free IMEI Check</h3>
+                <p>Redirect to official IMEI.info to check clean/lost status, blacklist, carrier lookup, and warranty.</p>
+            </div>
+            <span class="portal-btn">Access Checker <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a href="services.html" class="portal-card">
+            <div>
+                <div class="portal-icon"><i class="fa-brands fa-apple"></i></div>
+                <h3>Official iCloud Removal</h3>
+                <p>Express server-based Apple ID removals for iPhone 6 to 17 Pro Max, iPads, and Apple Watches.</p>
+            </div>
+            <span class="portal-btn">View Models & Rates <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="services.html#sim-section" class="portal-card">
+            <div>
+                <div class="portal-icon" style="color: #10b981;"><i class="fa-solid fa-sim-card"></i></div>
+                <h3>Carrier SIM Unlock</h3>
+                <p>Permanent network carrier unlock for Samsung Galaxy, Fold/Flip series, Google Pixel, and Android.</p>
+            </div>
+            <span class="portal-btn">Unlock Networks <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <a href="tools.html" class="portal-card" style="border-color: rgba(245, 158, 11, 0.3);">
+            <div>
+                <div class="portal-icon" style="color: var(--accent-gold);"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <h3>Forensic & Unlock Suite</h3>
+                <p>Download full pre-activated packages: Oxygen Forensic, UFED 7.71, MD-NEXT, and extractors without data format.</p>
+            </div>
+            <span class="portal-btn">Open Free Suite <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+    </section>
+
+    <!-- Live Counter -->
+    <section class="counter-section">
+        <div class="counter-number" id="successCounter">0</div>
+        <div class="counter-label">Total Successful Operations & Orders</div>
+    </section>
+
+    <!-- 3-Step Verification Guide -->
+    <section class="guide-section">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h2 style="font-size: 32px; font-weight: 800;">Verify Before Submission</h2>
+            <p style="color: var(--text-dim);">Follow standard GSMA guidelines to inspect your unit</p>
+        </div>
+        <div class="guide-grid">
+            <div class="guide-card">
+                <span class="step-tag">STEP 1</span>
+                <h4>Dial *#06#</h4>
+                <p style="color: var(--text-dim); font-size: 14px; margin-top: 8px;">Open dialer to instantly reveal the 15-digit IMEI code.</p>
+            </div>
+            <div class="guide-card">
+                <span class="step-tag">STEP 2</span>
+                <h4>Clean Status Check</h4>
+                <p style="color: var(--text-dim); font-size: 14px; margin-top: 8px;">Verify that the unit is not on Lost/Stolen Mode via IMEI database.</p>
+            </div>
+            <div class="guide-card">
+                <span class="step-tag">STEP 3</span>
+                <h4>Instant Order & Track</h4>
+                <p style="color: var(--text-dim); font-size: 14px; margin-top: 8px;">Select model, pay via USDT (BEP20), and follow live server updates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <div style="text-align: center; margin: 40px 0 20px;"><h3 style="font-size: 26px;">Client Feedback</h3></div>
+    <section class="reviews-grid" id="reviewsContainer"></section>
+
+    <!-- ================= VIP SERVICES & FORENSIC SUITE OVERVIEW ================= -->
+    <section class="overview-section" id="services-overview">
+        <div class="overview-header">
+            <span class="sub-badge"><i class="fa-solid fa-layer-group"></i> SYSTEM CAPABILITIES</span>
+            <h2>Comprehensive Service & Tool Architecture</h2>
+            <p>Complete breakdown of official database unlocks, forensic data carving modules, and free utilities</p>
+        </div>
+
+        <div class="overview-grid">
+            <!-- 1. Oxygen Forensic -->
+            <div class="overview-card" style="--accent: #ef4444;">
+                <div class="icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </div>
+                <div class="card-tag">Latest v18.3.0.80</div>
+                <h3>1. Oxygen Forensic Detective</h3>
+                <p>
+                    Advanced mobile forensic engine delivering full physical extraction, cloud token extraction, and encrypted database parsing. Bypasses lock screens without factory reset, auto-installs drivers, and exports court-ready forensic reports across all recent updates.
+                </p>
+                <div class="features-list">
+                    <span><i class="fa-solid fa-check"></i> Physical Data Dump</span>
+                    <span><i class="fa-solid fa-check"></i> Auto Installation</span>
+                    <span><i class="fa-solid fa-check"></i> Cloud Token Decryption</span>
+                </div>
+            </div>
+
+            <!-- 2. Cellebrite UFED -->
+            <div class="overview-card" style="--accent: #3b82f6;">
+                <div class="icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="5" y="2" width="14" height="20" rx="3" ry="3"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        <path d="M9 6h6"/>
+                    </svg>
+                </div>
+                <div class="card-tag">v7.71 + Search Fix</div>
+                <h3>2. Cellebrite UFED Ultimate</h3>
+                <p>
+                    Industry standard for physical, file-system, and logical extractions. Includes the essential Search Fix component for rapid chipset bypassing, EDL/BROM protocol interfacing, and memory dumping without wiping user partitions.
+                </p>
+                <div class="features-list">
+                    <span><i class="fa-solid fa-check"></i> Search Fix Applied</span>
+                    <span><i class="fa-solid fa-check"></i> File System Extraction</span>
+                    <span><i class="fa-solid fa-check"></i> Qualcomm / MTK BROM</span>
+                </div>
+            </div>
+
+            <!-- 3. MOBILedit Forensic -->
+            <div class="overview-card" style="--accent: #10b981;">
+                <div class="icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24"/>
+                    </svg>
+                </div>
+                <div class="card-tag">Forensic Express Suite</div>
+                <h3>3. MOBILedit Forensic Suite</h3>
+                <p>
+                    Specialized mobile analyzer designed for deep app decoding, deleted chats/media retrieval, and SIM cloner operations. Allows live physical investigations and forensic acquisition across both legacy and modern device architectures.
+                </p>
+                <div class="features-list">
+                    <span><i class="fa-solid fa-check"></i> Deleted Media Recovery</span>
+                    <span><i class="fa-solid fa-check"></i> SIM Card Cloning</span>
+                    <span><i class="fa-solid fa-check"></i> Comprehensive App Analyzer</span>
+                </div>
+            </div>
+
+            <!-- 4. Official iCloud Unlock -->
+            <div class="overview-card" style="--accent: #00d2ff;">
+                <div class="icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                        <path d="M12 12v3"/>
+                    </svg>
+                </div>
+                <div class="card-tag">Official Server Database</div>
+                <h3>4. Official iCloud Removal</h3>
+                <p>
+                    Permanent Apple ID activation lock removal directly through carrier and source database servers. Covers iPhone 6 through 17 Pro Max, iPad series, and Apple Watch models. Strict Clean Mode verification ensures 100% factory completion within 1 to 48 hours.
+                </p>
+                <div class="features-list">
+                    <span><i class="fa-solid fa-check"></i> Permanent Factory Clean</span>
+                    <span><i class="fa-solid fa-check"></i> iPhone, iPad, Apple Watch</span>
+                    <span><i class="fa-solid fa-check"></i> 1-48 Hours Express</span>
+                </div>
+            </div>
+
+            <!-- 5. Carrier SIM Unlock -->
+            <div class="overview-card" style="--accent: #a855f7;">
+                <div class="icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="6" y="3" width="12" height="18" rx="2"/>
+                        <path d="M10 7h4M10 11h4M10 15h4"/>
+                    </svg>
+                </div>
+                <div class="card-tag">Global Factory Unlock</div>
+                <h3>5. Carrier SIM Network Unlock</h3>
+                <p>
+                    Direct carrier network liberation for Samsung Galaxy S, Fold, Flip, Google Pixel, and global GSM devices. Permanently unlocks domestic and international network locks to allow open usage across all SIM cards worldwide.
+                </p>
+                <div class="features-list">
+                    <span><i class="fa-solid fa-check"></i> Permanent Network Liberation</span>
+                    <span><i class="fa-solid fa-check"></i> Samsung / Pixel / Android</span>
+                    <span><i class="fa-solid fa-check"></i> Global Band Support</span>
+                </div>
+            </div>
+
+            <!-- 6. Free Model Inspection -->
+            <div class="overview-card" style="--accent: #f59e0b;">
+                <div class="icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                        <path d="M11 8v6M8 11h6"/>
+                    </svg>
+                </div>
+                <div class="card-tag">Zero Cost Diagnostic</div>
+                <h3>6. Free Model & IMEI Check</h3>
+                <p>
+                    Direct API link to check worldwide TAC databases, verifying warranty dates, origin carriers, FMI status (Find My iPhone), and blacklisted/stolen flags prior to ordering, preventing unnecessary expenses on unsupported devices.
+                </p>
+                <div class="features-list">
+                    <span><i class="fa-solid fa-check"></i> Blacklist & Stolen Verification</span>
+                    <span><i class="fa-solid fa-check"></i> Clean / Lost Status</span>
+                    <span><i class="fa-solid fa-check"></i> 100% Free Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 GSM FRP Solutions. Built for engineering & forensic operations.</p>
+    </footer>
+
+    <script>
+        // Counter Animation
+        let count = 1, target = 3687, el = document.getElementById("successCounter");
+        function runCounter() {
+            if (count < target) {
+                count += Math.ceil((target - count) / 20);
+                if (count > target) count = target;
+                el.innerText = count.toLocaleString();
+                setTimeout(runCounter, 20);
+            } else { el.innerText = target.toLocaleString(); }
+        }
+        runCounter();
+
+        // Sample Testimonials
+        const reviews = [
+            { n: "Majed S.", r: "iPhone 15 Pro Max Clean unlocked in 22 hours flat. Pure VIP quality!" },
+            { n: "Robert F.", r: "Oxygen Forensic package installed flawlessly with full database acquisition." },
+            { n: "Ali Al-Harbi", r: "Apple Watch Ultra 2 iCloud removed officially. Fast service." },
+            { n: "Erick T.", r: "UFED 7.71 fix search works smoothly without errors." }
+        ];
+        const container = document.getElementById("reviewsContainer");
+        reviews.forEach(r => {
+            container.innerHTML += `
+                <div class="review-box">
+                    <div style="color: var(--accent-gold); margin-bottom: 8px;">★★★★★</div>
+                    <p style="font-size: 14px; margin-bottom: 8px;">"${r.r}"</p>
+                    <div style="font-size: 12px; color: var(--text-dim); font-weight: 700;">— ${r.n}</div>
+                </div>
+            `;
+        });
+
+        function searchRedirect(e) {
+            if (e.key === "Enter") {
+                const q = document.getElementById("liveSearch").value.toLowerCase();
+                if (q.includes("oxygen") || q.includes("ufed") || q.includes("md") || q.includes("tool")) {
+                    window.location.href = `tools.html?q=${encodeURIComponent(q)}`;
+                } else {
+                    window.location.href = `services.html?q=${encodeURIComponent(q)}`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
